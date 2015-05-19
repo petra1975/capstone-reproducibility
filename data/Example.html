@@ -103,7 +103,6 @@ Fix any variables that aren't right.
 <pre class="r"><code>pols$subject&lt;-factor(pols$subject)
 pols$testtime&lt;-factor(pols$testtime, levels=c(&quot;pre&quot;, &quot;post&quot;))</code></pre>
 <!-- Find the minimum, mean, and median incomes. -->
-<p>I’d like to find the minimum, mean, and median incomes. I can do all this and more in one fell swoop.</p>
 <pre class="r"><code>summary(pols$income)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   5.672  27.590  41.220  43.040  56.010 114.800</code></pre>
@@ -123,13 +122,8 @@ Present the data supporting your analyses in graphical or
 tabular form.
 -->
 <p>Let’s see if political affiliation and minimum wage support are independent before the participants watched <em>America’s Funniest Home Videos</em>. To do this I need to calculate the frequency that individuals appear in different political groups. Then I’ll use a Chi-Square test of independence to test the hypothesis that affiliation and support are independent. Again, I don’t want to count people twice, so I’ll focus on the posttest data.</p>
-<pre class="r"><code>tab&lt;-table(pols$party[pols$testtime==&quot;pre&quot;],pols$minwage[pols$testtime==&quot;pre&quot;])
-tab</code></pre>
-<pre><code>##              
-##               no yes
-##   democrat     8  18
-##   independent 11   6
-##   republican  14   9</code></pre>
+<pre class="r"><code>tab&lt;-table(pols$party[pols$testtime==&quot;pre&quot;],pols$minwage[pols$testtime==&quot;pre&quot;])</code></pre>
+<p>tabLet’s see if political affiliation and minimum wage support</p>
 <p>These are the frequencies individuals fell into the different conditions.</p>
 <pre class="r"><code>chisq.test(pols$party[pols$testtime==&quot;pre&quot;],pols$minwage[pols$testtime==&quot;pre&quot;])</code></pre>
 <pre><code>## 

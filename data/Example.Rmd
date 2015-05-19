@@ -45,8 +45,6 @@ pols$testtime<-factor(pols$testtime, levels=c("pre", "post"))
 ```
 
 <!-- Find the minimum, mean, and median incomes. -->
-I'd like to find the minimum, mean, and median incomes. I can do
-all this and more in one fell swoop.
 
 ```{r}
 summary(pols$income)
@@ -84,8 +82,9 @@ to count people twice, so I'll focus on the posttest data.
 
 ```{r}
 tab<-table(pols$party[pols$testtime=="pre"],pols$minwage[pols$testtime=="pre"])
-tab
 ```
+tabLet's see if political affiliation and minimum wage support
+
 
 These are the frequencies individuals fell into the different
 conditions.
